@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First PWA Base</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for background and font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to the top of the viewport */
+            min-height: 100vh;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div id="app-container" class="w-full max-w-lg bg-white rounded-xl shadow-2xl p-6 md:p-10 border border-gray-100 transform transition-all hover:shadow-3xl">
+
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-extrabold text-blue-700">PWA Project Starter</h1>
+            <p class="text-gray-500 mt-2">A solid foundation for your Progressive Web App.</p>
+        </header>
+
+        <!-- Feature Card -->
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 012 2v1h4a2 2 0 012 2v4a2 2 0 01-2 2h-1v4a2 2 0 01-2 2h-4a2 2 0 01-2-2v-1H7a2 2 0 01-2-2v-4a2 2 0 012-2h1V6a2 2 0 012-2z"></path></svg>
+                Current Status
+            </h2>
+            <p class="text-gray-600">This webpage is responsive and ready to be converted! Once you host this file online (e.g., on GitHub Pages), you can take the link to PWABuilder.com.</p>
+        </div>
+
+        <!-- Action Section -->
+        <div class="text-center">
+            <button id="alertButton" class="w-full py-3 px-6 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Test Interactivity
+            </button>
+        </div>
+
+        <!-- Message Box (Alternative to alert()) -->
+        <div id="messageBox" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+            <div class="bg-white rounded-xl p-8 shadow-2xl max-w-sm w-full text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">PWA Base Message!</h3>
+                <p class="text-gray-600 mb-6">This message demonstrates basic JavaScript functionality within your web app.</p>
+                <button onclick="hideMessage()" class="w-full py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition">
+                    Got It!
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript for basic interactivity
+
+        // Function to show the custom message box
+        function showMessage() {
+            document.getElementById('messageBox').classList.remove('hidden');
+        }
+
+        // Function to hide the custom message box
+        function hideMessage() {
+            document.getElementById('messageBox').classList.add('hidden');
+        }
+
+        // Event listener for the main button
+        document.getElementById('alertButton').addEventListener('click', showMessage);
+
+        // This is where you would add more complex PWA features later, like data caching.
+        // For now, this is your complete, foundational website.
+    </script>
+
+</body>
+</html>
